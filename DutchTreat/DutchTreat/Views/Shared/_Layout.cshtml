@@ -6,14 +6,14 @@
     <link href="~/css/site.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
+    <div class="navbar navbar-inverse">
         <header class="container">
             <div class="navbar-brand">Dutch Treat</div>
-                <ul class="nav navbar-toggler">
-                    <li><a asp-controller="App" asp-action="Index">Home  </a></li>
-                    <li><a asp-controller="App" asp-action="Contact"> Contact </a></li>
-                    <li><a asp-controller="App" asp-action="About"> About</a></li>
-                </ul>
+            <ul class="nav navbar-nav">
+                <li><a asp-controller="App" asp-action="Index">Home  </a></li>
+                <li><a asp-controller="App" asp-action="Contact"> Contact </a></li>
+                <li><a asp-controller="App" asp-action="About"> About</a></li>
+            </ul>
         </header>
     </div>
     <section class="container">
@@ -22,8 +22,8 @@
     </section>
     <footer class="align-text-bottom">
         <div class="text-center">Aplicação Asp.Net MVC - Bootstrap, Angular, Entity</div>
-        </footer>
-    
+    </footer>
+
     <script src="~/lib/jQuery/jquery-3.3.1.min.js"></script>
     <script src="~/lib/bootstrap/bootstrap.min.js"></script>
     <script src="~/js/index.js"></script>
