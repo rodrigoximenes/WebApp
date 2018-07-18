@@ -1,29 +1,31 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Dutch Treatc : @ViewBag.Title</title>
+    <title>Dutch Treat : @ViewBag.Title</title>
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/css/site.css" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <h1>Welcome to Dutch Treat</h1>
-        <menu>
-            <ul>
-                <li><a asp-controller="App" asp-action="Index">Home</a></li>
-                <li><a asp-controller="App" asp-action="Contact">Contact</a></li>
-                <li><a asp-controller="App" asp-action="About">About</a></li>
-            </ul>
-        </menu>
-    </header>
-    <section>
+    <div>
+        <header class="container">
+            <div class="navbar-brand">Dutch Treat</div>
+                <ul class="nav navbar-toggler">
+                    <li><a asp-controller="App" asp-action="Index">Home  </a></li>
+                    <li><a asp-controller="App" asp-action="Contact"> Contact </a></li>
+                    <li><a asp-controller="App" asp-action="About"> About</a></li>
+                </ul>
+        </header>
+    </div>
+    <section class="container">
         <h2>@ViewBag.Title</h2>
         @RenderBody()
     </section>
-    <footer>Aplicação Asp.Net MVC - Bootstrap, Angular, Entity</footer>
-
-
-
+    <footer class="align-text-bottom">
+        <div class="text-center">Aplicação Asp.Net MVC - Bootstrap, Angular, Entity</div>
+        </footer>
+    
     <script src="~/lib/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="~/lib/bootstrap/bootstrap.min.js"></script>
     <script src="~/js/index.js"></script>
     @RenderSection("scripts", false)
 </body>
