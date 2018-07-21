@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DutchTreat.Data.Context;
 using DutchTreat.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace DutchTreat.Data.Repository
@@ -30,6 +31,17 @@ namespace DutchTreat.Data.Repository
                 _logger.LogError($"Failed to get all products: {e}");
                 return null;
             }
+        }
+
+        public IEnumerable<Order> GetAllOrders()
+        {
+            return _ctx.Orders.Include(p => p.Items).ThenInclude(i => i.Product).ToList();
+        }
+
+        public Order GetOrderById(int id)
+        {
+            return _ctx.Orders.Include(p => p.Items).ThenInclude(i => i.Product)
+                .FirstOrDefault(o => o.Id == id);
         }
 
         public IEnumerable<Product> GetProductsByCategory(string category)
