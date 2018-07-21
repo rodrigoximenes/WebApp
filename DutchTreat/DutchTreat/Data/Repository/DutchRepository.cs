@@ -22,7 +22,7 @@ namespace DutchTreat.Data.Repository
         {
             try
             {
-                _logger.LogInformation("Todos produtos chamados");
+                _logger.LogInformation("All product called");
                 return _ctx.Products.OrderBy(p => p.Title).ToList();
             }
             catch (Exception e)
