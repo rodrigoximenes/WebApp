@@ -12,6 +12,7 @@ namespace DutchTreat.Data.Repository
         Order GetOrderById(int id);
 
         bool SaveAll();
-        
+
+        void AddEntity(object model);
     }
 }
