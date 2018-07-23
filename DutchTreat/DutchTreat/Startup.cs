@@ -1,4 +1,5 @@
-﻿using DutchTreat.Data;
+﻿using AutoMapper;
+using DutchTreat.Data;
 using DutchTreat.Data.Context;
 using DutchTreat.Data.Repository;
 using DutchTreat.Services;
@@ -28,6 +29,7 @@ namespace DutchTreat
             {
                 cfg.UseSqlServer(_config.GetConnectionString("DutchConnectionString"));
             });
+            services.AddAutoMapper();
             services.AddTransient<IMailService, NullMailService>();
             services.AddTransient<DutchSeeder>();
             services.AddScoped<IDutchRepository, DutchRepository>();
