@@ -31,7 +31,10 @@ namespace DutchTreat
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddIdentity<StoreUser, IdentityRole>(cfg => 
-                cfg.User.RequireUniqueEmail = true).AddEntityFrameworkStores<DutchContext>();
+                cfg.User.RequireUniqueEmail = true).
+                AddEntityFrameworkStores<DutchContext>();
+
+            services.AddAuthentication().AddCookie().AddJwtBearer();
 
             services.AddDbContext<DutchContext>(cfg =>
             {
